@@ -8,13 +8,13 @@ namespace SCRT
 {
 	struct meshRayHit {
 		float       distance;   // distance from ray origin to hit
-		vec3<float> coordinate; // coordinates of the hit in world space
-		vec3<float> normal;     // normal of the mesh at hit point
+		Vec3<float> coordinate; // coordinates of the hit in world space
+		Vec3<float> normal;     // normal of the mesh at hit point
 	};
 
-	class meshObject {
+	class MeshObject {
 	public:
-		virtual bool hit(const ray& r, meshRayHit& hitData, float tMin = 0.0f, float tMax = 999.0f) const = 0;
+		virtual bool hit(const Ray& r, meshRayHit& hitData, float tMin = 0.0f, float tMax = 999.0f) const = 0;
 	};
 }
 

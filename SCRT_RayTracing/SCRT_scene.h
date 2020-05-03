@@ -7,14 +7,20 @@
 
 namespace SCRT
 {
-	class scene
+	class Scene
 	{
 	public:
-		scene() {}
-		void addMesh(meshObject* mesh);
+		Camera _camera;
+
+		Scene() {}
+		void addMesh(MeshObject* mesh);
+		void removeMesh(MeshObject* mesh);
+
+		int meshCount() const { return _mesh_ptrs.size(); }
+		MeshObject* get(int meshIndex) const { return _mesh_ptrs[meshIndex]; }
+
 	private:
-		std::vector<meshObject*> _meshes;
-		camera _camera;
+		std::vector<MeshObject*> _mesh_ptrs;
 	};
 }
 

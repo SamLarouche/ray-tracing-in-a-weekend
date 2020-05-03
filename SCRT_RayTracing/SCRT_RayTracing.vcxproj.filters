@@ -45,6 +45,9 @@
     <ClInclude Include="SCRT_sphere.h">
       <Filter>Source Files\meshes\primitives</Filter>
     </ClInclude>
+    <ClInclude Include="SCRT_renderer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,6 +58,12 @@
     </ClCompile>
     <ClCompile Include="SCRT_sphere.cpp">
       <Filter>Source Files\meshes\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="SCRT_renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SCRT_camera.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

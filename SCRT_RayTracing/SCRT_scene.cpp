@@ -1,5 +1,5 @@
 #include "SCRT_scene.h"
 
-void SCRT::scene::addMesh(SCRT::meshObject* mesh) {
-	_meshes.push_back(mesh);
+void SCRT::Scene::addMesh(SCRT::MeshObject* mesh) {
+	_mesh_ptrs.push_back(mesh);
 }

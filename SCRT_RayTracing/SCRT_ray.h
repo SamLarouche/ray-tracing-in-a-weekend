@@ -5,23 +5,23 @@
 
 namespace SCRT
 {
-	class ray 
+	class Ray 
 	{
 	public:
-		ray() {};
-		ray(const vec3<float>& a, const vec3<float>& b)
+		Ray() {};
+		Ray(const Vec3<float>& a, const Vec3<float>& b)
 		{
 			_origin = a;
 			_direction = b;
 		}
 
-		vec3<float> getOrigin() const { return _origin; }
-		vec3<float> getDirection() const { return _direction; }
-		vec3<float> eval(float x) const { return _origin + (x * _direction); }
+		Vec3<float> getOrigin() const { return _origin; }
+		Vec3<float> getDirection() const { return _direction; }
+		Vec3<float> eval(float x) const { return _origin + (x * _direction); }
 
 	private:
-		vec3<float> _origin;
-		vec3<float> _direction;
+		Vec3<float> _origin;
+		Vec3<float> _direction;
 	};
 }
 

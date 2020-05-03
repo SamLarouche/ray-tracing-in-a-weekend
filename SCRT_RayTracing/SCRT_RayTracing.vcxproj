@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="SCRT_camera.h" />
     <ClInclude Include="SCRT_meshObject.h" />
+    <ClInclude Include="SCRT_renderer.h" />
     <ClInclude Include="SCRT_sphere.h" />
     <ClInclude Include="SCRT_ray.h" />
     <ClInclude Include="SCRT_scene.h" />
@@ -149,6 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SCRT_camera.cpp" />
+    <ClCompile Include="SCRT_renderer.cpp" />
     <ClCompile Include="SCRT_sphere.cpp" />
     <ClCompile Include="SCRT_scene.cpp" />
   </ItemGroup>

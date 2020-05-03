@@ -1,8 +1,8 @@
 #include "SCRT_sphere.h"
 
-bool SCRT::sphere::hit(const SCRT::ray& currentRay, SCRT::meshRayHit& hitData, float tMin, float tMax) const
+bool SCRT::Sphere::hit(const SCRT::Ray& currentRay, SCRT::meshRayHit& hitData, float tMin, float tMax) const
 {
-	SCRT::vec3<float> centeredSpherePosition = currentRay.getOrigin() - _origin;
+	SCRT::Vec3<float> centeredSpherePosition = currentRay.getOrigin() - _origin;
 
 	float a = SCRT::dot(currentRay.getDirection(), currentRay.getDirection());
 	float b = 2.0 * dot(centeredSpherePosition, currentRay.getDirection());
@@ -10,7 +10,7 @@ bool SCRT::sphere::hit(const SCRT::ray& currentRay, SCRT::meshRayHit& hitData, f
 
 	float discriminant = b * b - 4 * a * c;
 
-	if (discriminant < 0)
+	if (discriminant > 0)
 	{
 		// we have to determine if one of the hit is in our acceptable margin
 		float potentialHit = (((-1 * b) - sqrt(discriminant)) / (2.0f * a));

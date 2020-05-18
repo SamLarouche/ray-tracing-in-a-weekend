@@ -19,51 +19,72 @@
     <Filter Include="Source Files\meshes\primitives">
       <UniqueIdentifier>{16cfed60-68eb-4574-b0d0-c72ea3e71481}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\maths">
+      <UniqueIdentifier>{b4cd876e-2dbb-472e-b05c-c6f2552e7503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\materials">
+      <UniqueIdentifier>{e6533a2c-76f3-4274-94c9-3b0a818b732e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SCRT_vec3.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SCRT_ray.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SCRT_meshObject.h">
-      <Filter>Source Files\meshes</Filter>
-    </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stb_image_write.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SCRT_scene.h">
+    <ClInclude Include="camera.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="SCRT_camera.h">
+    <ClInclude Include="ray.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="SCRT_sphere.h">
+    <ClInclude Include="renderer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Source Files\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="sphere.h">
       <Filter>Source Files\meshes\primitives</Filter>
     </ClInclude>
-    <ClInclude Include="SCRT_renderer.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="material.h">
+      <Filter>Source Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="lambert.h">
+      <Filter>Source Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="math_utils.h">
+      <Filter>Source Files\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh_object.h">
+      <Filter>Source Files\meshes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SCRT_scene.cpp">
+    <ClCompile Include="camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SCRT_sphere.cpp">
+    <ClCompile Include="renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere.cpp">
       <Filter>Source Files\meshes\primitives</Filter>
     </ClCompile>
-    <ClCompile Include="SCRT_renderer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="lambert.cpp">
+      <Filter>Source Files\materials</Filter>
     </ClCompile>
-    <ClCompile Include="SCRT_camera.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math_utils.cpp">
+      <Filter>Source Files\maths</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

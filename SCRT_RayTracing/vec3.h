@@ -218,7 +218,7 @@ namespace SCRT
 	{
 		return Vec3<T>(v.val[0] - s, v.val[1] - s, v.val[2] - s);
 	}
-	
+
 	template<class T>
 	Vec3<T> operator*(const Vec3<T>& v, T s)
 	{
@@ -230,7 +230,7 @@ namespace SCRT
 	{
 		return Vec3<T>(v.val[0] * s, v.val[1] * s, v.val[2] * s);
 	}
-	
+
 	template<class T>
 	Vec3<T> operator/(const Vec3<T>& v, T s)
 	{

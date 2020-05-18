@@ -1,10 +1,20 @@
 #ifndef SCRT_RAY_H
 #define SCRT_RAY_H
 
-#include "SCRT_vec3.h"
+#include "vec3.h"
+#include "material.h"
+
+class Material;
 
 namespace SCRT
 {
+	struct HitRecord {
+		float        distance;     // distance from ray origin to hit
+		Vec3<float>  coordinate;   // coordinates of the hit in world space
+		Vec3<float>  normal;       // normal of the mesh at hit point
+		Material*    material_ptr;   // identifer of the material hit by the ray
+	};
+
 	class Ray 
 	{
 	public:

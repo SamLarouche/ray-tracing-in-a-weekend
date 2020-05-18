@@ -1,9 +1,10 @@
 #ifndef SCRT_RENDERER_H
 #define SCRT_RENDERER_H
 
-#include "SCRT_scene.h"
-#include "SCRT_vec3.h"
 #include <limits>
+
+#include "scene.h"
+#include "vec3.h"
 
 namespace SCRT
 {
@@ -14,12 +15,14 @@ namespace SCRT
 	public:
 		Color* pixels;
 
-		Renderer(int frameWidth, int frameHeight, float minRenderDist = 0.0, float maxRenderDist = FLT_MAX);
+		Renderer(int frameWidth, int frameHeight, int samples = 20,  float minRenderDist = 0.0, float maxRenderDist = FLT_MAX);
 		void renderScene(const Scene& s); // TODO: Error handling with return
 		
 	private:
 		int _frameWidth;
 		int _frameHeight;
+
+		int _sampleCount;
 
 		float _minRenderDistance;
 		float _maxRenderDistance;

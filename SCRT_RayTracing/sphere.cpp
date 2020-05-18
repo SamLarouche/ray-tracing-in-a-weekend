@@ -1,6 +1,6 @@
-#include "SCRT_sphere.h"
+#include "sphere.h"
 
-bool SCRT::Sphere::hit(const SCRT::Ray& currentRay, SCRT::meshRayHit& hitData, float tMin, float tMax) const
+bool SCRT::Sphere::hit(const SCRT::Ray& currentRay, SCRT::HitRecord& hitData, float tMin, float tMax) const
 {
 	SCRT::Vec3<float> centeredSpherePosition = currentRay.getOrigin() - _origin;
 

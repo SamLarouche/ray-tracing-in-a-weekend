@@ -2,8 +2,10 @@
 #define SCRT_SCENE_H
 
 #include <vector>
-#include "SCRT_meshObject.h"
-#include "SCRT_camera.h"
+
+#include "camera.h"
+#include "mesh_object.h"
+
 
 namespace SCRT
 {

@@ -1,4 +1,4 @@
-#include "SCRT_camera.h"
+#include "camera.h"
 
 namespace SCRT
 {

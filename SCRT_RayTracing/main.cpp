@@ -2,13 +2,13 @@
 #include <fstream>
 #include <vector>
 
-#include "SCRT_camera.h"
-#include "SCRT_meshObject.h"
-#include "SCRT_ray.h"
-#include "SCRT_renderer.h"
-#include "SCRT_scene.h"
-#include "SCRT_sphere.h"
-#include "SCRT_vec3.h"
+#include "camera.h"
+#include "mesh_object.h"
+#include "ray.h"
+#include "renderer.h"
+#include "scene.h"
+#include "sphere.h"
+#include "vec3.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -41,7 +41,10 @@ int main()
 	SCRT::Renderer renderer(imgWindowWidth, imgWindowHeight);
 
 	SCRT::Sphere sphere1(SCRT::Vec3<float>(0.0, 0.0, -1.0), 0.5f);
+	SCRT::Sphere sphere2(SCRT::Vec3<float>(0.0, -100.5, -1.0), 100.f);
+
 	scene.addMesh(&sphere1);
+	scene.addMesh(&sphere2);
 
 	renderer.renderScene(scene);
 

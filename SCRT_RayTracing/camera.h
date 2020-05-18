@@ -1,7 +1,7 @@
 #ifndef SCRT_CAMERA_H
 #define SCRT_CAMERA_H
 
-#include "SCRT_vec3.h"
+#include "vec3.h"
 
 namespace SCRT
 {

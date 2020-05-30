@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "camera.h"
-#include "mesh_object.h"
+#include "meshes/mesh_object.h"
 
 
 namespace SCRT

@@ -3,8 +3,11 @@
 
 #include <limits>
 
+#include "materials/material.h"
+#include "math/vec3.h"
+
 #include "scene.h"
-#include "vec3.h"
+
 
 namespace SCRT
 {
@@ -15,7 +18,7 @@ namespace SCRT
 	public:
 		Color* pixels;
 
-		Renderer(int frameWidth, int frameHeight, int samples = 20,  float minRenderDist = 0.0, float maxRenderDist = FLT_MAX);
+		Renderer(int frameWidth, int frameHeight, int samples = 50,  float minRenderDist = 0.0, float maxRenderDist = FLT_MAX / 2.0f);
 		void renderScene(const Scene& s); // TODO: Error handling with return
 		
 	private:
@@ -26,8 +29,10 @@ namespace SCRT
 
 		float _minRenderDistance;
 		float _maxRenderDistance;
+
+		int _maxRayDepth = 50;
 		
-		Vec3<float> _computeRay(const Ray& r, const Scene& s);
+		Vec3<float> _computeRayColor(const Ray& r, const Scene& s, int rayDepth);
 	};
 }
 

@@ -2,7 +2,7 @@
 #define SCRT_LAMBERT_H
 
 #include "material.h"
-#include "vec3.h"
+#include "../math/vec3.h"
 
 namespace SCRT
 {

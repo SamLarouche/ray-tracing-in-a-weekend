@@ -1,9 +1,10 @@
 #ifndef SCRT_MESH_OBJECT_H
 #define SCRT_MESH_OBJECT_H
 
-#include "material.h"
-#include "ray.h"
-#include "vec3.h"
+#include "../materials/material.h"
+#include "../math/vec3.h"
+#include "../ray.h"
+
 
 namespace SCRT
 {

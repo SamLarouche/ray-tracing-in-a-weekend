@@ -27,12 +27,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image_write.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="camera.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -45,23 +39,32 @@
     <ClInclude Include="scene.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="vec3.h">
-      <Filter>Source Files\maths</Filter>
+    <ClInclude Include="materials\lambert.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sphere.h">
-      <Filter>Source Files\meshes\primitives</Filter>
+    <ClInclude Include="materials\material.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="material.h">
-      <Filter>Source Files\materials</Filter>
+    <ClInclude Include="materials\metallic.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lambert.h">
-      <Filter>Source Files\materials</Filter>
+    <ClInclude Include="math\math_utils.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="math_utils.h">
-      <Filter>Source Files\maths</Filter>
+    <ClInclude Include="math\vec3.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mesh_object.h">
-      <Filter>Source Files\meshes</Filter>
+    <ClInclude Include="meshes\mesh_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meshes\sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb\stb_image_write.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,14 +80,17 @@
     <ClCompile Include="scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sphere.cpp">
-      <Filter>Source Files\meshes\primitives</Filter>
+    <ClCompile Include="materials\lambert.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lambert.cpp">
-      <Filter>Source Files\materials</Filter>
+    <ClCompile Include="materials\metallic.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="math_utils.cpp">
-      <Filter>Source Files\maths</Filter>
+    <ClCompile Include="math\math_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meshes\sphere.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

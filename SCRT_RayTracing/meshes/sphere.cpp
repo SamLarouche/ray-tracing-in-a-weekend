@@ -19,6 +19,7 @@ bool SCRT::Sphere::hit(const SCRT::Ray& currentRay, SCRT::HitRecord& hitData, fl
 			hitData.distance = (((-1 * b) - sqrt(discriminant)) / (2.0f * a));
 			hitData.coordinate = currentRay.eval(hitData.distance);
 			hitData.normal = (hitData.coordinate - _origin) / _radius;
+			hitData.material_ptr = _material_ptr;
 			return true;
 		}
 
@@ -28,6 +29,7 @@ bool SCRT::Sphere::hit(const SCRT::Ray& currentRay, SCRT::HitRecord& hitData, fl
 			hitData.distance = (((-1 * b) - sqrt(discriminant)) / (2.0f * a));
 			hitData.coordinate = currentRay.eval(hitData.distance);
 			hitData.normal = (hitData.coordinate - _origin) / _radius;
+			hitData.material_ptr = _material_ptr;
 			return true;
 		}
 	}

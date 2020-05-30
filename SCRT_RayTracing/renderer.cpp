@@ -1,18 +1,19 @@
-#include "renderer.h"
-
-#include "math_utils.h"
-#include "mesh_object.h"
-#include "ray.h"
-#include "sphere.h"
-
 #include <algorithm>
 #include <limits>
 #include <random>
 
+#include "math/math_utils.h"
+#include "meshes/mesh_object.h"
+#include "meshes/sphere.h"
+
+#include "ray.h"
+#include "renderer.h"
+
+
 namespace SCRT 
 {
 	// namespace "Rendering" will contain everything related to rendering (colors, shading, etc.)
-	// that isn't strictly needed inside the Renderer class.
+	// that isn't strictly needed inside the Renderer class, but isn't used outside of it.
 	namespace RenderUtils
 	{
 		// create a linear blend and get the color of the pixel the r vector is aiming at in this blend
@@ -36,7 +37,7 @@ namespace SCRT
 	void Renderer::renderScene(const Scene& s) 
 	{
 		int pixelIndex = 0;
-		for (int y = _frameHeight - 1; y > -1; --y)
+		for (int y = _frameHeight - 1; y >= 0; --y)
 		{
 			for (int x = 0; x < _frameWidth; ++x)
 			{
@@ -48,10 +49,8 @@ namespace SCRT
 
 					SCRT::Vec3<float> rayDirection = s._camera.a() + (u * s._camera.width()) + (v * s._camera.height());
 					SCRT::Ray currentRay = SCRT::Ray(s._camera.position(), rayDirection);
-					SCRT::Vec3<float> rayColor = _computeRay(currentRay, s);
 
-					meanColorApprox += rayColor;
-					SCRT::Random::randPointInUnitSphere();
+					meanColorApprox += _computeRayColor(currentRay, s, _maxRayDepth);
 				}
 
 				meanColorApprox /= float(_sampleCount);
@@ -65,8 +64,13 @@ namespace SCRT
 		}
 	}
 
-	Vec3<float> Renderer::_computeRay(const Ray& r, const Scene& s) 
+	Vec3<float> Renderer::_computeRayColor(const Ray& r, const Scene& s, int rayDepth) 
 	{
+		if (rayDepth <= 0)
+		{
+			return Vec3<float>(0.0, 0.0, 0.0);
+		}
+		
 		HitRecord closestHit;
 		closestHit.distance = FLT_MAX;
 
@@ -83,12 +87,19 @@ namespace SCRT
 			}
 		}
 
-		if (closestHit.distance > _minRenderDistance && closestHit.distance < _maxRenderDistance)
+		if (closestHit.distance >= _minRenderDistance && closestHit.distance <= _maxRenderDistance)
 		{
-			Vec3<float> normal = closestHit.normal;
-			Vec3<float> redirection = (closestHit.coordinate + normal + SCRT::Random::randPointInUnitSphere()) - closestHit.coordinate;
-			return 0.5f * _computeRay(Ray(closestHit.coordinate, redirection), s);
-			//return 0.5f * Vec3<float>(normal.x() + 1, normal.y() + 1, normal.z() + 1);
+			Ray scatteredRay;
+			Vec3<float> attentuation;
+
+			if (closestHit.material_ptr->scatter(r, closestHit, attentuation, scatteredRay)) 
+			{
+				return attentuation * _computeRayColor(scatteredRay, s, rayDepth - 1);
+			}
+			else 
+			{
+				return Vec3<float>(0.0, 0.0, 0.0);
+			}
 		}
 		else
 		{

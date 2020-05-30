@@ -4,9 +4,12 @@ namespace SCRT
 {
 	namespace Random
 	{
+		static std::mt19937 rdNumberGenerator{ static_cast<std::mt19937::result_type>(std::time(nullptr)) };
+		
 		// returns a random float between 0.0 and 1.0
 		float randf01()
 		{
+			std::uniform_real_distribution<float> rdRealNumberDistribution(0.0f, 1.0f);
 			return rdRealNumberDistribution(rdNumberGenerator);
 		}
 

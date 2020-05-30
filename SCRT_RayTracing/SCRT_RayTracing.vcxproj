@@ -139,26 +139,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
-    <ClInclude Include="lambert.h" />
-    <ClInclude Include="material.h" />
-    <ClInclude Include="mesh_object.h" />
+    <ClInclude Include="materials\lambert.h" />
+    <ClInclude Include="materials\material.h" />
+    <ClInclude Include="materials\metallic.h" />
+    <ClInclude Include="math\math_utils.h" />
+    <ClInclude Include="math\vec3.h" />
+    <ClInclude Include="meshes\mesh_object.h" />
+    <ClInclude Include="meshes\sphere.h" />
     <ClInclude Include="renderer.h" />
-    <ClInclude Include="sphere.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="scene.h" />
-    <ClInclude Include="math_utils.h" />
-    <ClInclude Include="vec3.h" />
-    <ClInclude Include="stb_image.h" />
-    <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="stb\stb_image.h" />
+    <ClInclude Include="stb\stb_image_write.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lambert.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="materials\lambert.cpp" />
+    <ClCompile Include="materials\metallic.cpp" />
+    <ClCompile Include="math\math_utils.cpp" />
+    <ClCompile Include="meshes\sphere.cpp" />
     <ClCompile Include="renderer.cpp" />
-    <ClCompile Include="sphere.cpp" />
     <ClCompile Include="scene.cpp" />
-    <ClCompile Include="math_utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
